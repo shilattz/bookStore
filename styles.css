@@ -1,0 +1,618 @@
+
+body {
+    direction: rtl;
+    text-align: right;
+    background-color: #e9eaee;
+    color: #333;
+    font-family: Arial, sans-serif;
+    background-size: cover; /* Ensures the image covers the entire background */
+    background-position: center; /* Centers the background image */
+    background-repeat: no-repeat; /* Prevents the image from repeating */
+    /* margin: 0;
+    padding: 0; */
+    overflow-x: hidden;
+}
+
+/* Wrapper for main content and aside */
+.content-wrapper {
+    display: flex;
+}
+
+.discount-books {
+    width: 20%; /* Adjust the width to make the scroll thinner */
+    background-color:  #e9eaee;
+    box-shadow: 0px 2px 4px rgba(0, 0, 0, 0.1);
+    padding: 30px; /* Reduced padding to accommodate the thinner scroll */
+    overflow-y: auto;
+    height: calc(100vh - 40px); /* Full height minus header and footer padding */
+    position: sticky;
+    top: 0;
+    scrollbar-width: thin; /* Make the scrollbar thinner */
+    scrollbar-color: #ccc #f5f5f5; /* Set the color of the scrollbar */
+    border: 5px solid #ffffff; /* הוספת מסגרת דקה בצבע לבן */
+}
+
+.discount-books nav {
+    margin-top: -32px;
+    margin-bottom: 20px;
+    color: #3c68a1;
+    padding: 2px 0; /* הפחתת הרוחב באמצעות הפדינג */
+    border: 3px solid #ffffff; 
+    border-radius: 5px;
+    /* align-items: center;
+   width: 400px; */
+   width: 350px;
+}
+
+
+.discount-book-container { 
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+    align-items: center;
+    
+}
+
+/* Adjust the main section */
+main {
+    width: 80%;
+    padding: 20px;
+    overflow-x: hidden;
+}
+
+/* Header styles */
+header {
+    background-color: #fff;
+    padding: 20px;
+    box-shadow: 0px 2px 4px rgba(0, 0, 0, 0.1);
+    margin-bottom: 20px; /* Add space between header and discount aside */
+}
+
+.main-menu {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.logo img {
+    max-width: 150px;
+}
+
+.right-menu {
+    display: flex;
+    align-items: center;
+}
+.sign-in-button {
+    display: flex;
+    align-items: center;
+    gap: 5px; /* Adjust the spacing between icon and text */
+}
+
+.search-bar {
+    direction: rtl;
+    text-align: right;
+    position: relative;
+    display: flex;
+    align-items: center;
+    margin-left: 10px;
+}
+
+.search-bar input[type="text"] {
+    padding: 10px 40px 10px 20px;
+    border: 1px solid #e5bf19;
+    border-radius: 20px;
+    width: 400px;
+    box-sizing: border-box;
+    background-color: #f8f8f8; /* Add background color */
+    font-size: 16px; /* Adjust font size */
+    font-weight: bold;
+    color: #333; /* Change text color */
+    transition: border-color 0.3s ease; /* Add transition effect */
+}
+
+.search-bar input[type="text"]:focus {
+    border-color: #aaa; /* Change border color on focus */
+}
+
+.search-bar i {
+    position: absolute;
+    left: 10px;
+    top: 50%;
+    transform: translateY(-50%);
+    color: #aaa;
+    cursor: pointer;
+}
+
+/* Add hover effect for the search icon */
+.search-bar i:hover {
+    color: #666;
+}
+
+
+.connect-register a {
+    text-decoration: none;
+    color: #666;
+    font-weight: bold;
+    padding: 10px 20px;
+    border: 1px solid #e5bf19;
+    border-radius: 20px;
+    transition: color 0.3s ease;
+    background-color: #f8f8f8;
+}
+
+.connect-register a:hover {
+    color: #333;
+}
+
+.hamburger-menu {
+    display: none;
+    position: relative;
+}
+
+.hamburger-menu i {
+    font-size: 24px;
+    cursor: pointer;
+}
+
+.hamburger-menu .menu-items {
+    display: none;
+    position: absolute;
+    top: 100%;
+    left: 0;
+    background-color: #fff;
+    box-shadow: 0px 2px 4px rgba(0, 0, 0, 0.1);
+    z-index: 1000;
+    padding: 10px;
+    border-radius: 5px;
+    width: 200px;
+}
+
+.hamburger-menu:hover .menu-items {
+    display: block;
+}
+
+.hamburger-menu .menu-items a,
+.hamburger-menu .menu-items .menu-item a {
+    display: block;
+    padding: 10px;
+    text-decoration: none;
+    color: #333;
+    position: relative;
+}
+
+.hamburger-menu .menu-items .menu-item .sub-menu {
+    display: none;
+    position: absolute;
+    top: 0;
+    right: -95%;
+    background-color: #fff;
+    box-shadow: 0px 2px 4px rgba(0, 0, 0, 0.1);
+    z-index: 1000;
+    padding: 10px;
+    border-radius: 5px;
+    width: 200px;
+    list-style: none; /* Remove bullet points */
+}
+
+.hamburger-menu .menu-items .menu-item:hover .sub-menu {
+    display: block;
+}
+
+.hamburger-menu .menu-items .menu-item .sub-menu a {
+    padding: 5px;
+}
+
+.hamburger-menu .menu-items a:hover,
+.hamburger-menu .menu-items .menu-item a:hover {
+    background-color: #f5f5f5;
+}
+
+/* Navigation styles */
+nav {
+    background-color:  #fce16b;
+    padding: 10px;
+    display: flex;
+    justify-content: center;
+    box-shadow: 0px 4px 4px -4px rgba(0, 0, 0, 0.8); /* Add underline shadow */
+    margin-right: 10px; /* Add margin to the right side */
+}
+
+.categories {
+    list-style: none;
+    display: flex;
+    align-items: center;
+    padding: 0;
+    margin: 0;
+}
+.categories2 {
+    list-style: none;
+    display: flex;
+    align-items: center;
+    padding: 0;
+    margin: 0;
+    color: #3c68a1;
+}
+
+.categories li {
+    margin: 0 10px;
+    position: relative;
+}
+
+.categories li a {
+    color: #3c68a1;
+    text-decoration: none;
+    position: relative;
+    padding-right: 20px; /* Add padding for the arrow */
+}
+
+
+.categories .separator {
+    color:#3c68a1;
+}
+
+.categories .separator::after {
+    margin-left: 5px;
+    margin-right: 5px;
+}
+
+
+.categories li:hover .sub-categories {
+    display: block;
+}
+
+.categories .sub-categories {
+    list-style: none; /* ביטול הנקודות בתתי הקטגוריות */
+    display: none;
+    position: absolute;
+    top: 100%;
+    right: 0;
+    background-color: #f8f8f8;
+    padding: 10px;
+    border-radius: 5px;
+    z-index: 1000;
+    text-align: right;
+    white-space: nowrap; /* מונע שבירת שורות */
+    font-size: 16px; /* גודל הפונט */
+}
+
+.categories .sub-categories li {
+    margin: 10px 0; /* הגדלת הרווח בין האלמנטים */
+}
+
+.categories .sub-categories li a {
+    display: block; /* מאפשר את שינוי צבע הרקע */
+    padding: 5px 10px; /* הוספת רווח פנימי */
+    color: #e5bf19;
+    text-decoration: none;
+    transition: background-color 0.3s ease, color 0.3s ease; /* הוספת מעבר חלק לצבעי הרקע והטקסט */
+}
+
+.categories .sub-categories li a:hover {
+    background-color: #e0e0e0; /* צבע הרקע החדש כאשר מרחפים */
+    color: #3c68a1; /* צבע הטקסט החדש כאשר מרחפים */
+}
+
+/* Book styles */
+.book-container {
+    display: flex;
+    overflow-x: auto;
+    padding: 10px;
+    margin-top: 1px;
+    white-space: nowrap;
+    scrollbar-width: thin;
+    scrollbar-color: #ccc #f5f5f5;
+}
+
+.book {
+    position: relative;
+    margin-right: 20px;
+    flex: 0 0 auto;
+    width: 190px; /* Adjust the width if needed */
+    height:auto; /* Set a fixed height for the book */
+    /* background-color: #bdd1d7; */
+    background-color:white;
+    /* border-radius: 10px; */
+    box-shadow: 0px 2px 4px rgba(0, 0, 0, 0.3);
+    overflow: visible;
+    transition: transform 0.3s ease;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-between; /* Space between image and details */
+}
+.new-label {
+    position: absolute;
+    top: -10px;
+    right: -5px;
+    max-width: 70px;
+    max-height: 70px;
+    z-index: 1;
+}
+
+.new-label img {
+    max-width: 100%;
+    max-height: 100%;
+    object-fit: contain;
+}
+
+.book img {
+    margin-top: 10px;
+    width: 140px;
+    height: auto;
+    /* border-top-left-radius: 10px;
+    border-top-right-radius: 10px; */
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.book img:hover {
+    transform: scale(1.05);
+    box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.2);
+}
+
+
+.book-details {
+    padding: 10px;
+    height: 40%; /* Adjust height percentage to fit within the book container */
+    overflow: hidden; /* Hide overflow text if necessary */
+    text-align: center; /* Center the text */
+    display: flex;
+    flex-direction: column;
+    justify-content: center; /* Center the text vertically */
+    align-items: center;
+}
+
+.book h3 {
+    color: #3c68a1;
+    margin-top: 10px;
+    font-size: 18px;
+    margin: 1px 0; /* Reduced margin */
+}
+
+.book p {
+    font-size: 14px;
+    font-weight: bold;
+    color:  #3c68a1;
+    margin: 2px 0; /* Reduced margin */
+}
+
+.book:hover {
+    transform: scale(1.05);
+}
+
+/* Custom scrollbar styles */
+.book-container::-webkit-scrollbar {
+    height: 10px;
+}
+
+.book-container::-webkit-scrollbar-track {
+    background-color: #f5f5f5;
+}
+
+.book-container::-webkit-scrollbar-thumb {
+    background-color: #ccc;
+    border-radius: 5px;
+}
+
+/* Firefox scrollbar styles */
+.book-container {
+    scrollbar-width: thin;
+    scrollbar-color: #ccc #f5f5f5;
+}
+
+.cart-button {
+    display: inline-flex;
+    align-items: center;
+    background-color: #3c68a1;
+    color: #e5bf19;
+    padding: 5px 10px;
+    border: none;
+    border-radius:20px;
+    font-weight: bold;
+    font-size: 16px;
+    cursor: pointer;
+    text-decoration: none; /* הסרת הקו התחתון */
+}
+
+.cart-button:hover {
+    background-color: #2f5077; /* שינוי צבע הרקע בעת מעבר עכבר */
+}
+
+.cart-button i {
+    margin-left: 10px;
+}
+
+.cart-count {
+    background-color: white;
+    color: #3c68a1;
+    border-radius: 50%;
+    padding: 2px 6px;
+    font-size: 12px;
+    margin-right: 10px;
+}
+
+/* Add this style to ensure "New on the Shelf" is visible */
+.categories li:nth-child(2) {
+    color: #3c68a1;
+    /* font-weight: bold; */
+}
+
+footer {
+    background-color:  #fce16b;
+    color: #3c68a1;
+    padding: 20px;
+    text-align: right;
+}
+
+.footer-column {
+    display: inline-block;
+    margin: 0 20px;
+    vertical-align: top; /* יישור למעלה */
+}
+
+.footer-column h4 {
+    font-size: 18px;
+    border-bottom: 1px solid #3c68a1;
+    padding-bottom: 10px;
+    margin-bottom: 0; /* הוספת הגבלת רווח לתוך העמודה */
+}
+
+.footer-column p {
+    margin: 5px 0;
+}
+
+.contact-details {
+    display: inline-block;
+    margin-right: 300px; /* הזזת הטקסט לצד ימין */
+    margin-left: 250px; /* הזזת הטקסט לצד שמאל */
+    text-align: center;
+    vertical-align: top;
+}
+
+
+.contact-details h4 {
+    font-size: 30px;
+    margin-bottom: 10px;
+}
+
+.contact-details p {
+    margin: 5px 0;
+}
+
+footer a {
+    color: #3c68a1;
+    text-decoration: none;
+    padding-bottom: 5px; /* הסרת הפס מתחת לקישור */
+    border-bottom: 1px solid transparent; /* פס מתחת לקישור, שקופה בהתחלה */
+    transition: border-bottom-color 0.3s; /* אנימציה של הפס */
+}
+
+footer a:hover {
+    border-bottom-color: #fff; /* פס מתחת לקישור שוחזר ללבן בעת העכבר מעליו */
+}
+
+
+@media (max-width: 768px) {
+    /* Adjust the layout of the content and discount-books */
+    .content-wrapper {
+        /* flex-direction: column; */
+        width: 100%;
+        box-sizing: border-box;
+    }
+    header{
+        width: 100%;
+        box-sizing: border-box;
+        flex-direction: column;
+        
+    }
+
+    .discount-books {
+        display: none;
+        width: 100%;
+        height: auto;
+        position: relative;
+        order: 2;
+    }
+
+    main {
+        width: 100%;
+        box-sizing: border-box;
+       /* align-items: center;
+       justify-content: center;
+        order: 1; */
+    }
+
+    /* Hide categories and display hamburger menu */
+    .categories {
+        display: none;
+    }
+
+    .hamburger-menu {
+        display: block;
+    }
+
+    /* Adjust the position and size of search-bar and connect-register */
+    header .right-menu {
+        display: flex;
+        align-items: center;
+        box-sizing: border-box;
+    }
+    .search-bar,
+    .connect-register {
+        width: auto;
+        margin-left: 0;
+        box-sizing: border-box;
+        font-size: 0.8rem; /* Adjust font size for smaller appearance */
+        padding: 5px; /* Add padding to adjust size */
+    }
+
+    .search-bar input[type="text"] {
+        width: 150px; 
+        /* Reduce the width of the search input */
+        padding: 1px; /* Reduce padding for smaller input */
+    }
+
+    .connect-register {
+        margin-left: 10px;
+        padding: 3px 5px; /* Adjust padding for smaller appearance */
+    }
+
+    .right-menu {
+        display: flex;
+        flex-direction: column-reverse;
+        align-items: center;
+        box-sizing: border-box;
+    }
+
+ 
+    .search-bar {
+        margin-top: 10px;
+        margin-left:1px;
+        padding: 3px 5px; /* Adjust padding for smaller appearance */
+    }
+
+    .connect-register {
+        margin-bottom: 10px;
+    }
+
+    .hamburger-menu {
+        margin-top: auto;
+    }
+
+    /* Hide right-menu and display hamburger menu */
+    .right-menu {
+        display: none;
+    }
+
+    .hamburger-menu {
+        display: block;
+    }
+
+    .main-menu {
+        justify-content: space-between;
+    }
+
+    .categories {
+        display: none;
+    }
+
+    .book-container {
+        padding: 10px;
+    }
+
+ footer{
+    width: 100%;
+    box-sizing: border-box;
+ }
+        
+        .footer-column, .contact-details {
+            width: 100%;
+            display: block;
+            margin: 0;
+            text-align: center;
+        }
+    
+        .contact-details {
+            margin: 20px 0;
+        }
+}
+
